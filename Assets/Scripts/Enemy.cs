@@ -26,11 +26,16 @@ public class Enemy : MonoBehaviour
     }
     private void GetNextWaypoint()
     {
-        if (waypointIndex >= Waypoints.points.Length -1)
-        {
-            Destroy(gameObject);
-        }
+        EndPath();
         waypointIndex++;
         target = Waypoints.points[waypointIndex];
+    }
+    private void EndPath()
+    {
+        if (waypointIndex >= Waypoints.points.Length - 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 }
