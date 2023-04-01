@@ -25,7 +25,7 @@ public class NextAnimation : MonoBehaviour
     }
 
 
-    private void PlayAnim()
+    public void PlayAnim()
     {
         animator.Play("Fonde 1");
         timeActuelle = Time.time;

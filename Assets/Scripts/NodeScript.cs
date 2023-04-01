@@ -12,25 +12,31 @@ public class NodeScript : MonoBehaviour
     private SpriteRenderer rend;
     private GameObject turret;
 
+    private CurrencyManager currencyManager;
 
-    
 
     void Start()
     {
+        currencyManager = FindObjectOfType<CurrencyManager>();
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
     }
 
     private void OnMouseDown()
     {
-        if (turret !=null)
+        if (turret != null)
         {
             Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
             return;
         }
 
+
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = Instantiate(turretToBuild,transform.position, transform.rotation);
+        if (currencyManager.CheckCurrency() >= 20)
+        {
+            turret = Instantiate(turretToBuild, transform.position + new Vector3(0, 0.5f), transform.rotation);
+            currencyManager.AddCurrency(-20);
+        }
     }
 
     private void OnMouseEnter()

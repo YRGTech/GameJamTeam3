@@ -21,6 +21,11 @@ public class CurrencyManager : MonoBehaviour
         currentCurrency += amount;
     }
 
+    public int CheckCurrency()
+    {
+        return currentCurrency;
+    }
+
     private void Update()
     {
         moneyText.text = "Money : " + currentCurrency;
