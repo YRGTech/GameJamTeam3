@@ -3,7 +3,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Transform target;
-    public float followSpeed;
+    [SerializeField] float followSpeed;
 
     void Update()
     {
