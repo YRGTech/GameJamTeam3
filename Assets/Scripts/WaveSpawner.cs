@@ -53,28 +53,39 @@ public class WaveSpawner : MonoBehaviour
     //}
 
 
-    public GameObject enemyPrefab; // The prefab of the enemy to spawn
+    public Wave[] waves;
+    private Wave wave;
     public Transform[] spawnPoints; // The positions where enemies will spawn
     public float spawnInterval = 1f; // The time between each enemy spawn
     public int maxEnemies = 10; // The maximum number of enemies that can be alive at once
+    [SerializeField]
+    float currencyRewardMultiplier = 1.2f;
+    int waveIndex = 0;
 
     private int numEnemies;
 
     private void Start()
     {
         numEnemies = 0;
-        StartCoroutine(SpawnEnemies());
+    }
+
+    public void LaunchWave()
+    {
+        if (waveIndex < waves.Length)
+        {
+            wave = waves[waveIndex];
+            StartCoroutine(SpawnEnemies());
+            waveIndex++;
+        }
+
     }
 
     private IEnumerator SpawnEnemies()
     {
-        while (true)
+        maxEnemies = Mathf.RoundToInt((maxEnemies * Mathf.Pow(1.2f, waveIndex - 1)));
+        for (int i = 0; i < maxEnemies; i++)
         {
-            if (numEnemies < maxEnemies)
-            {
-                SpawnEnemy();
-            }
-
+            SpawnEnemy();
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -88,7 +99,7 @@ public class WaveSpawner : MonoBehaviour
         SpawnPoint spawn = spawnPoint.GetComponent<SpawnPoint>();
 
         // Spawn the enemy at the spawn point with the specified path
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject enemy = Instantiate(wave.enemiesPrefabs[Random.Range(0, wave.enemiesPrefabs.Length)], spawnPoint.position, Quaternion.identity);
         enemy.GetComponent<Enemy>().SetPath(spawn.spawnpath); // Set the path for the enemy
 
         // Increase the number of enemies
@@ -99,6 +110,8 @@ public class WaveSpawner : MonoBehaviour
         {
             numEnemies--;
         };
+
+        enemy.GetComponent<Enemy>().currencyReward = Mathf.RoundToInt(enemy.GetComponent<Enemy>().currencyReward * Mathf.Pow(currencyRewardMultiplier, waveIndex - 1));
     }
 
 }

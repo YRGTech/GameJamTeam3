@@ -59,7 +59,6 @@ public class Enemy : MonoBehaviour
     {
         if (waypointIndex >= path.GetWaypointCount())
         {
-            Die();
             return;
 
         }

@@ -16,6 +16,7 @@ public class EndPath : MonoBehaviour
         if(other.gameObject.tag == "Enemy")
         {
             vassal.pv -= other.GetComponent<Enemy>().damage;
+            Destroy(other.gameObject);
         }
     }
 }
