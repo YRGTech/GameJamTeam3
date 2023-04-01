@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
 
     void Start()
     {
-        
+        canva.SetActive(false);
     }
 
     void Update()
@@ -20,11 +20,18 @@ public class UIManager : MonoBehaviour
         {
             canva.SetActive(true);
             mainMenu.SetActive(true);
+            optionMenu.SetActive(false);
+            Time.timeScale = 0f;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && canva.activeSelf)
         {
             canva.SetActive(false);
-            optionMenu.SetActive(false);
+            Time.timeScale = 1f;
+        }
+
+        if (!canva.activeSelf && Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
         }
     }
 }
