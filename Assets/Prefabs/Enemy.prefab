@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7667226782245796918}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1463988837
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.990566, g: 0.07943219, b: 0.07943219, a: 1}
@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0e399657d877d840b9780cd5978e941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  health: 10
+  speed: 10
+  damage: 50
+  currencyReward: 10
 --- !u!61 &6222639719176265306
 BoxCollider2D:
   m_ObjectHideFlags: 0
