@@ -90,12 +90,5 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Projectile"))
-        {
-            TakeDamage(other.GetComponent<Projectile>().damage);
-            other.GetComponent<Projectile>().Apubal();
-        }
-    }
+   
 }

@@ -69,7 +69,6 @@ public class TowerShoot : MonoBehaviour
                 };
                 pooledProjectiles.Add(projectileInstance);
             }
-            projectileInstance.SetActive(true);
             projectileInstance.transform.position = transform.position;
             Projectile circleScript = projectileInstance.GetComponent<Projectile>();
             if (circleScript != null)

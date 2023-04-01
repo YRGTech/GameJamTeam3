@@ -5,7 +5,7 @@ public class Projectile : MonoBehaviour
 {
     public Transform target;
     public float damage;
-    [SerializeField] float followSpeed;
+    public float followSpeed;
     public event Action OnDestroy;
 
 
@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            Apubal();
         }
     }
 
@@ -25,5 +25,13 @@ public class Projectile : MonoBehaviour
     {
         OnDestroy?.Invoke();
         Destroy(gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.GetComponent<Enemy>().TakeDamage(damage);
+            Apubal();
+        }
     }
 }
