@@ -12058,6 +12058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingCurrency: 100
+  moneyText: {fileID: 1685693623}
 --- !u!4 &1137779453
 Transform:
   m_ObjectHideFlags: 0
