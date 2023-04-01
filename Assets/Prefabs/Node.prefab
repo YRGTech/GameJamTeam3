@@ -72,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1463988837
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -1971929780, guid: 618748d0c1a0a234d8619266025b6d0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.8867924, g: 0.12130654, b: 0.12130654, a: 0}
   startColor: {r: 0, g: 0, b: 0, a: 0}
-  turret: {fileID: 6176094559454480021, guid: 4da5707c4bb812c45a1d75ec25a8d4e7, type: 3}
 --- !u!61 &-9123723121365532920
 BoxCollider2D:
   m_ObjectHideFlags: 0

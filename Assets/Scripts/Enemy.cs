@@ -66,6 +66,16 @@ public class Enemy : MonoBehaviour
 
         waypointIndex++;
     }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            currencyManager.AddCurrency(currencyReward);
+            Die();
+        }
+    }
 
 
     public void Die()
@@ -80,12 +90,5 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Projectile"))
-        {
-            TakeDamage(other.GetComponent<Projectile>().damage);
-            other.GetComponent<Projectile>().Apubal();
-        }
-    }
+   
 }
