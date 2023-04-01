@@ -21,8 +21,9 @@ public class WaveSpawner : MonoBehaviour
     private TextMeshProUGUI waveCounDownTimer;
 
     private int waveIndex = 0;
+    private float currencyRewardMultiplier =1.2f;
 
-     void Update()
+    void Update()
     {
         if (countDown <= 0f)
         {
@@ -46,6 +47,7 @@ public class WaveSpawner : MonoBehaviour
 
      void SpawnEnemy()
     {
-        Instantiate(enemyPrefab,spawnPoint.position,spawnPoint.rotation);
+        Transform newEnemy = Instantiate(enemyPrefab,spawnPoint.position,spawnPoint.rotation);
+        newEnemy.GetComponent<Enemy>().currencyReward = Mathf.RoundToInt(newEnemy.GetComponent<Enemy>().currencyReward * Mathf.Pow(currencyRewardMultiplier, waveIndex - 1));
     }
 }
