@@ -28,7 +28,7 @@ public class ConstructionManager : MonoBehaviour
         }
         if (Time.time >= startTime + 0.5f)
         {
-            GameObject.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }
