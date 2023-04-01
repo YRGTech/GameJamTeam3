@@ -6381,8 +6381,8 @@ Tilemap:
   - first: {x: 14, y: 3, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileIndex: 17
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9106,7 +9106,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ef5c8e983110df144bfa0790dc310d71, type: 2}
   - m_RefCount: 12
     m_Data: {fileID: 11400000, guid: 4f0e89b33318a92479de7f1bb01aa5bb, type: 2}
-  - m_RefCount: 634
+  - m_RefCount: 633
     m_Data: {fileID: 11400000, guid: 8fadf56f952e4ab44acfaf31453942c8, type: 2}
   - m_RefCount: 3
     m_Data: {fileID: 11400000, guid: fdd8fd022596a9543ac1672493a84b4d, type: 2}
@@ -9134,8 +9134,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 6dc817e23113ece45bad6021dcffecf9, type: 2}
   - m_RefCount: 14
     m_Data: {fileID: 11400000, guid: 93af7d8684c06cb47965fdd8f18c67ef, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: bc8099e41d5716a4ba6d3a76ed889adc, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 12
     m_Data: {fileID: -496907229, guid: 32b88d6a2983f974abfbbfed0f6cfd79, type: 3}
@@ -9143,7 +9143,7 @@ Tilemap:
     m_Data: {fileID: 1730434358, guid: 32b88d6a2983f974abfbbfed0f6cfd79, type: 3}
   - m_RefCount: 12
     m_Data: {fileID: -2041100696, guid: 32b88d6a2983f974abfbbfed0f6cfd79, type: 3}
-  - m_RefCount: 634
+  - m_RefCount: 633
     m_Data: {fileID: 21300000, guid: ac4e8e3e62f3f7742ada9baa736b886e, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 248506925, guid: 618748d0c1a0a234d8619266025b6d0c, type: 3}
@@ -9171,8 +9171,8 @@ Tilemap:
     m_Data: {fileID: -1045067342, guid: 618748d0c1a0a234d8619266025b6d0c, type: 3}
   - m_RefCount: 14
     m_Data: {fileID: 1531077816, guid: 32b88d6a2983f974abfbbfed0f6cfd79, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1459664455, guid: 8358f0032dad2fd42b7f3f57365bc266, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 880
     m_Data:
