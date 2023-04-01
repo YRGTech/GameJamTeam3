@@ -9,32 +9,31 @@ public class NodeScript : MonoBehaviour
 {
     public Color hoverColor;
     public Color startColor;
-    private Renderer rend;
-    public GameObject turret;
+    private SpriteRenderer rend;
+    private GameObject turret;
 
-    bool turretPosed;
 
     
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
     }
 
     private void OnMouseDown()
     {
-        if (turretPosed)
+        if (turret !=null)
         {
             Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
             return;
         }
 
-        Instantiate(turret, transform.position, transform.rotation);
-        turretPosed = true;
+        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        turret = Instantiate(turretToBuild,transform.position, transform.rotation);
     }
 
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
         rend.material.color = Color.red;
     }

@@ -45,9 +45,9 @@ public class Enemy : MonoBehaviour
             GetNextWaypoint();
         }
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        health -= damage;
+        health -= Mathf.RoundToInt( damage);
 
         if (health <= 0)
         {
@@ -66,6 +66,16 @@ public class Enemy : MonoBehaviour
 
         waypointIndex++;
     }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            currencyManager.AddCurrency(currencyReward);
+            Die();
+        }
+    }
 
 
     public void Die()
@@ -78,4 +88,7 @@ public class Enemy : MonoBehaviour
 
         Debug.Log(currencyReward);
     }
+
+
+   
 }

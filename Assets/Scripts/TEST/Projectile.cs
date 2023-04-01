@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public Transform target;
-    [SerializeField] float followSpeed;
+    public float damage;
+    public float followSpeed;
+    public event Action OnDestroy;
+
 
     void Update()
     {
@@ -13,7 +17,21 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            Apubal();
+        }
+    }
+
+    public void Apubal()
+    {
+        OnDestroy?.Invoke();
+        Destroy(gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.GetComponent<Enemy>().TakeDamage(damage);
+            Apubal();
         }
     }
 }

@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class TowerShoot : MonoBehaviour
 {
-    [SerializeField] GameObject projectilePrefab;
+    public GameObject projectilePrefab;
     [SerializeField] float timeBetweenShots;
     [SerializeField] float range;
     private float lastShotTime;
     private List<GameObject> pooledProjectiles;
     private GameObject currentTarget;
-
+    Collider2D[] hitColliders;
     void Start()
     {
         pooledProjectiles = new List<GameObject>();
@@ -35,25 +35,24 @@ public class TowerShoot : MonoBehaviour
         else
         {
             Vector2 enemyPos = transform.position;
-            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(enemyPos, range);
+            hitColliders = Physics2D.OverlapCircleAll(enemyPos, range);
             foreach (Collider2D hitCollider in hitColliders)
             {
                 if (hitCollider.gameObject.CompareTag("Enemy"))
                 {
                     currentTarget = hitCollider.gameObject;
+                    currentTarget.GetComponent<Enemy>().OnDeath += () =>
+                    {
+                        currentTarget = null;
+
+                    };
                     break;
                 }
             }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            currentTarget = other.gameObject;
-        }
-    }
+   
 
     void FireProjectile(GameObject target)
     {
@@ -63,9 +62,13 @@ public class TowerShoot : MonoBehaviour
             if (projectileInstance == null)
             {
                 projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                projectileInstance.GetComponent<Projectile>().OnDestroy += () =>
+                {
+                    pooledProjectiles.Remove(projectileInstance);
+
+                };
                 pooledProjectiles.Add(projectileInstance);
             }
-            projectileInstance.SetActive(true);
             projectileInstance.transform.position = transform.position;
             Projectile circleScript = projectileInstance.GetComponent<Projectile>();
             if (circleScript != null)
