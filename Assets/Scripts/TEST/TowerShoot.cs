@@ -10,6 +10,11 @@ public class TowerShoot : MonoBehaviour
     private List<GameObject> pooledProjectiles;
     private GameObject currentTarget;
     Collider2D[] hitColliders;
+    [SerializeField] float delay;
+    [SerializeField] float startTime;
+    [SerializeField] bool isShoot = false;
+    public NextAnimation nextAnimation = new NextAnimation();
+
     void Start()
     {
         pooledProjectiles = new List<GameObject>();
@@ -21,10 +26,18 @@ public class TowerShoot : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, currentTarget.transform.position) <= range)
             {
-                if (Time.time - lastShotTime > timeBetweenShots)
+                if (Time.time - lastShotTime > timeBetweenShots && !isShoot)
+                {
+                    nextAnimation.PlayAnim();
+                    isShoot = true;
+                    startTime = Time.time;
+
+                }
+                if (isShoot && startTime + delay <= Time.time)
                 {
                     FireProjectile(currentTarget);
                     lastShotTime = Time.time;
+                    isShoot = false;
                 }
             }
             else
