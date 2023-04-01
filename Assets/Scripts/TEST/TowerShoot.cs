@@ -15,7 +15,7 @@ public class TowerShoot : MonoBehaviour
         pooledProjectiles = new List<GameObject>();
     }
 
-/*    void Update()
+    void Update()
     {
         if (currentTarget != null)
         {
@@ -34,8 +34,9 @@ public class TowerShoot : MonoBehaviour
         }
         else
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
-            foreach (Collider hitCollider in hitColliders)
+            Vector2 enemyPos = transform.position;
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(enemyPos, range);
+            foreach (Collider2D hitCollider in hitColliders)
             {
                 if (hitCollider.gameObject.CompareTag("Enemy"))
                 {
@@ -43,36 +44,20 @@ public class TowerShoot : MonoBehaviour
                     break;
                 }
             }
-        }
-    }*/
 
-    void Update()
-    {
-        if (Time.time - lastShotTime > timeBetweenShots)
-        {
-            FireProjectile();
-            lastShotTime = Time.time;
+
         }
     }
 
-    void FireProjectile()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        GameObject projectileInstance = GetPooledProjectile();
-        if (projectileInstance == null)
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            pooledProjectiles.Add(projectileInstance);
-        }
-        projectileInstance.SetActive(true);
-        projectileInstance.transform.position = transform.position;
-        Projectile circleScript = projectileInstance.GetComponent<Projectile>();
-        if (circleScript != null)
-        {
-            circleScript.target = GameObject.FindGameObjectWithTag("Enemy").transform;
+            currentTarget = other.gameObject;
         }
     }
 
-   /* void FireProjectile(GameObject target)
+    void FireProjectile(GameObject target)
     {
         if (Time.time - lastShotTime > timeBetweenShots)
         {
@@ -91,7 +76,7 @@ public class TowerShoot : MonoBehaviour
             }
             lastShotTime = Time.time;
         }
-    }*/
+    }
 
     GameObject GetPooledProjectile()
     {
@@ -104,8 +89,6 @@ public class TowerShoot : MonoBehaviour
         }
         return null;
     }
-
-    // DEBUG
 
     void OnDrawGizmosSelected()
     {
