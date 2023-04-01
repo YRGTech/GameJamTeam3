@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TowerShoot : MonoBehaviour
 {
-    [SerializeField] GameObject projectilePrefab;
+    public GameObject projectilePrefab;
     [SerializeField] float timeBetweenShots;
     [SerializeField] float range;
     private float lastShotTime;
