@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pv: 10
-  speed: 2
+  speed: 10
   damage: 50
   currencyReward: 10
 --- !u!61 &6222639719176265306

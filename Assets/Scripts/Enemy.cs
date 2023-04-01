@@ -1,57 +1,80 @@
 
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int pv = 10;
+    public int health = 10;
     public float speed = 10f;
     public int damage = 50;
     public int currencyReward = 10;
-    private Transform target;
+    private Vector3 target;
     private int waypointIndex = 0;
-
+    private Path path;
     CurrencyManager currencyManager;
+
+    public event Action OnDeath;
 
     private void Start()
     {
-        target = Waypoints.points[0];
+
         currencyManager = FindObjectOfType<CurrencyManager>();
     }
+    public void SetPath(Path path)
+    {
+        this.path = path;
+        
+        // Start moving towards the first waypoint
+        waypointIndex = 0;
+        target = path.GetWaypoint(waypointIndex);
 
+    }
     private void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(speed * Time.deltaTime * dir.normalized, Space.World);
+        if (path == null)
+            return;
+        else
+        {
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.2)
+            Vector3 dir = target - transform.position;
+            transform.Translate(speed * Time.deltaTime * dir.normalized, Space.World);
+        }
+
+        if (Vector3.Distance(transform.position, target) <= 0.2)
         {
             GetNextWaypoint();
         }
+    }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
 
-        if(pv<=0)
+        if (health <= 0)
         {
-            Killed();
+            currencyManager.AddCurrency(currencyReward);
+            Die();
         }
     }
     private void GetNextWaypoint()
     {
-        if (waypointIndex >= Waypoints.points.Length - 1)
+        if (waypointIndex >= path.GetWaypointCount())
         {
-            EndPath();
+            Die();
             return;
 
         }
+        target = path.GetWaypoint(waypointIndex);
+
         waypointIndex++;
-        target = Waypoints.points[waypointIndex];
-    }
-    private void EndPath()
-    {
-            Destroy(gameObject);
     }
 
-    public void Killed()
+
+    public void Die()
     {
-        currencyManager.AddCurrency(currencyReward);
+        // Trigger the OnDeath event
+        OnDeath?.Invoke();
+
+
         Destroy(gameObject);
 
         Debug.Log(currencyReward);
