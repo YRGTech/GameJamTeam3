@@ -9,7 +9,7 @@ public class NodeScript : MonoBehaviour
 {
     public Color hoverColor;
     public Color startColor;
-    private Renderer rend;
+    private SpriteRenderer rend;
     public GameObject turret;
 
     bool turretPosed;
@@ -18,7 +18,7 @@ public class NodeScript : MonoBehaviour
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
     }
 
@@ -34,7 +34,7 @@ public class NodeScript : MonoBehaviour
         turretPosed = true;
     }
 
-    private void OnMouseOver()
+    private void OnMouseEnter()
     {
         rend.material.color = Color.red;
     }

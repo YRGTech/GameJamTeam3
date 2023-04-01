@@ -101,7 +101,7 @@ public class WaveSpawner : MonoBehaviour
         // Spawn the enemy at the spawn point with the specified path
         GameObject enemy = Instantiate(wave.enemiesPrefabs[Random.Range(0, wave.enemiesPrefabs.Length)], spawnPoint.position, Quaternion.identity);
         enemy.GetComponent<Enemy>().SetPath(spawn.spawnpath); // Set the path for the enemy
-
+        enemy.name = "Enemy " + numEnemies;
         // Increase the number of enemies
         numEnemies++;
 

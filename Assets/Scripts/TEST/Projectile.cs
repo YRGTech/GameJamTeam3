@@ -1,9 +1,13 @@
+using System;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public Transform target;
+    public float damage;
     [SerializeField] float followSpeed;
+    public event Action OnDestroy;
+
 
     void Update()
     {
@@ -15,5 +19,11 @@ public class Projectile : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void Apubal()
+    {
+        OnDestroy?.Invoke();
+        Destroy(gameObject);
     }
 }
