@@ -45,6 +45,16 @@ public class Enemy : MonoBehaviour
             GetNextWaypoint();
         }
     }
+    public void TakeDamage(float damage)
+    {
+        health -= Mathf.RoundToInt( damage);
+
+        if (health <= 0)
+        {
+            currencyManager.AddCurrency(currencyReward);
+            Die();
+        }
+    }
     private void GetNextWaypoint()
     {
         if (waypointIndex >= path.GetWaypointCount())
@@ -77,5 +87,15 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
 
         Debug.Log(currencyReward);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            TakeDamage(other.GetComponent<Projectile>().damage);
+            other.GetComponent<Projectile>().Apubal();
+        }
     }
 }
