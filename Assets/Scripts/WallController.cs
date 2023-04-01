@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 
 public class WallController : MonoBehaviour
 {
+    public GameObject[] zone;
     public int health = 500;
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -22,9 +23,20 @@ public class WallController : MonoBehaviour
 
     private void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
-            Destroy(gameObject);
+            foreach (var node in zone)
+            {
+                Tower tower = node.GetComponentInChildren<Tower>();
+                if (tower != null)
+                {
+                    int currentOwner = tower.ownerId;
+                   tower.ownerId = (currentOwner + 1) % FindObjectOfType<GameManager>().numPlayers;
+
+                }
+            }
+            gameObject.SetActive(false);
+
         }
     }
 }
