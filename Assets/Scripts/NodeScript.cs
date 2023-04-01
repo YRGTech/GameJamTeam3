@@ -31,6 +31,7 @@ public class NodeScript : MonoBehaviour
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = Instantiate(turretToBuild,transform.position, transform.rotation);
+        turret.transform.parent = transform;
     }
 
     private void OnMouseEnter()

@@ -7,7 +7,7 @@ public class Projectile : MonoBehaviour
     public float damage;
     public float followSpeed;
     public event Action OnDestroy;
-
+    public int playerId;
 
     void Update()
     {
@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<Enemy>().TakeDamage(damage,playerId+1);
             Apubal();
         }
     }
