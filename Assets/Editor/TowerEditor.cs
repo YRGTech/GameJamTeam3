@@ -15,7 +15,7 @@ public class TowerEditor : Editor
 
         serializedObject.Update();
 
-        Projectile projectile = target.GetComponentInChildren<Projectile>();
+        Projectile projectile = target.GetComponent<TowerShoot>().projectilePrefab.GetComponent<Projectile>();
 
         EditorGUILayout.LabelField("Projectile Variables", EditorStyles.boldLabel);
         EditorGUI.indentLevel++;
