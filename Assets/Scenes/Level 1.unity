@@ -26529,6 +26529,7 @@ MonoBehaviour:
   notificationObject: {fileID: 420496980}
   notificationObjectSec: {fileID: 704487319}
   message: 
+  letterDelay: 0.03
 --- !u!4 &1773881422
 Transform:
   m_ObjectHideFlags: 0
