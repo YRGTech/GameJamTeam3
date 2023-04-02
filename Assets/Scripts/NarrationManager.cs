@@ -1,9 +1,6 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
-using static UnityEngine.EventSystems.EventTrigger;
-using UnityEditor.U2D.Path.GUIFramework;
-using UnityEngine.UIElements;
 
 
 public class NarrationManager : MonoBehaviour

@@ -1,13 +1,5 @@
-    using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEngine.WSA;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class UpgradeButtonScript : MonoBehaviour
 {
@@ -56,7 +48,6 @@ public class UpgradeButtonScript : MonoBehaviour
     private void Update()
     {
         priceText.text = (price*2).ToString();
-        UnityEngine.Debug.Log(level);
         Tower tower = GetComponentInChildren<Tower>();
         if (tower != null)
         {
