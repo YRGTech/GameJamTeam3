@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
 
-        Debug.Log(currencyReward);
+        //Debug.Log(currencyReward);
     }
 
 
