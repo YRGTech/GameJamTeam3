@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fonde: {fileID: 3175219233618320861}
-  renderer: {fileID: 8078987786724025072}
+  rend: {fileID: 8078987786724025072}
   towerShoot: {fileID: 8078987786724025074}
   startTime: 0
 --- !u!95 &5343741994930660573

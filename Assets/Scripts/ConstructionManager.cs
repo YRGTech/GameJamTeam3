@@ -6,14 +6,14 @@ public class ConstructionManager : MonoBehaviour
 {
 
     [SerializeField] GameObject fonde;
-    [SerializeField] SpriteRenderer renderer;
+    [SerializeField] SpriteRenderer rend;
     [SerializeField] TowerShoot towerShoot;
     [SerializeField] float startTime;
 
     void Start()
     {
         startTime = Time.time + 4.5f;
-        renderer.enabled = false;
+        rend.enabled = false;
         towerShoot.enabled = false;
         fonde.SetActive(false);
     }
@@ -22,7 +22,7 @@ public class ConstructionManager : MonoBehaviour
     {
         if (Time.time >= startTime)
         {
-            renderer.enabled = true;
+            rend.enabled = true;
             towerShoot.enabled = true;
             fonde.SetActive(true);
         }

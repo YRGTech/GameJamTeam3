@@ -13,7 +13,7 @@ public class NodeScript : MonoBehaviour
     private GameObject turret;
 
     private CurrencyManager currencyManager;
-    private int playerId;
+    public int playerId;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class NodeScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (turret != null)
+        if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
         {
             Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
             return;
@@ -45,6 +45,7 @@ public class NodeScript : MonoBehaviour
         {
             turret = Instantiate(turretToBuild, transform.position + new Vector3(0, 0.5f), transform.rotation);
             turret.transform.parent = transform;
+            turret.GetComponent<Tower>().ownerId = playerId;
             currencyManager.AddCurrency(-20, playerId);
         }
     }
