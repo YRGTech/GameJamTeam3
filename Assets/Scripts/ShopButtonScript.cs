@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -20,11 +21,16 @@ public class ShopButtonScript : MonoBehaviour
     public GameObject button2;
     public GameObject button3;
 
+    [SerializeField] NodeScript nodeScript;
+
+    [SerializeField] TextMeshPro priceText;
+
     private CurrencyManager currencyManager;
     private int playerId;
 
     void Start()
-    {
+    {   
+        priceText.text = price.ToString();
         currencyManager = FindObjectOfType<CurrencyManager>();
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
@@ -35,7 +41,6 @@ public class ShopButtonScript : MonoBehaviour
         if (tower != null)
         {
             playerId = tower.ownerId;
-
         }
     }
 
@@ -56,7 +61,8 @@ public class ShopButtonScript : MonoBehaviour
             GameManager.Destroy(button3);
 
             GameObject newObject = Instantiate(turret1, transform.parent.position + new Vector3(0, 0.5f), transform.rotation);
-            newObject.transform.SetParent(transform.root);
+            nodeScript.turret = newObject;
+            //newObject.transform.SetParent(transform.root);
 
             currencyManager.AddCurrency(-price, playerId);
         }

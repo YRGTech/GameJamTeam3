@@ -10,6 +10,7 @@ public class NodeScript : MonoBehaviour
     public Color hoverColor;
     public Color startColor;
     private SpriteRenderer rend;
+    public GameObject turret;
 
     public GameObject Button1;
     public GameObject Button2;
@@ -36,25 +37,20 @@ public class NodeScript : MonoBehaviour
 
     private void OnMouseDown()
     {
-
-        if (!Button1.active)
+        if (turret == null)
         {
-            Button1.SetActive(true);
-            Button2.SetActive(true);
-            Button3.SetActive(true);
-        }
-        else if (Button1.active)
-        {
-            Button1.SetActive(false);
-            Button2.SetActive(false);
-            Button3.SetActive(false);
+            Button1.SetActive(!Button1.activeSelf);
+            Button2.SetActive(!Button2.activeSelf);
+            Button3.SetActive(!Button3.activeSelf);
         }
 
-        //if (turret != null)
-        //{
-        //    Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
-        //    return;
-        //}
+        
+
+        if (turret != null)
+        {
+            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
+            return;
+        }
 
 
             //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
