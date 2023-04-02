@@ -207,8 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
-  speed: 3
-  damage: 50
+  speed: 2
+  damage: 40
   currencyReward: 10
   animator: {fileID: 1472891575770136739}
 --- !u!61 &6222639719176265306

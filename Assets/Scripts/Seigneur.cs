@@ -1,17 +1,25 @@
+using CodeMonkey.HealthSystemCM;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seigneur : MonoBehaviour
+public class Seigneur : MonoBehaviour, IGetHealthSystem
 {
     public int Hp = 1000;
+    private HealthSystem healthSystem;
 
+    private void Awake()
+    {
+        healthSystem = new HealthSystem(Hp);
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Hp -= other.gameObject.GetComponent<Enemy>().damage;
+            healthSystem.Damage( other.gameObject.GetComponent<Enemy>().damage);
+            Hp = (int)healthSystem.GetHealth();
             other.GetComponent<Enemy>().Die();
         }
     }
@@ -22,5 +30,9 @@ public class Seigneur : MonoBehaviour
         {
             GameManager.isOver = true;
         }
+    }
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
     }
 }

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   damage: 10
-  followSpeed: 10
+  followSpeed: 15
   playerId: 0
 --- !u!58 &184072838923791841
 CircleCollider2D:
