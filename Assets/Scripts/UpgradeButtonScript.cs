@@ -28,8 +28,6 @@ public class UpgradeButtonScript : MonoBehaviour
     [SerializeField] TextMeshPro priceText;
 
 
-    public AudioClip builded;
-    public AudioClip upgrade;
 
 
     private Sprite spriteLevel2;

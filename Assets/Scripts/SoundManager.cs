@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip Click;
     public AudioClip startWave;
     public AudioClip dead;
+    public AudioClip victory;
+
     private void Awake()
     {
         audioSource= GetComponent<AudioSource>();
@@ -27,6 +29,11 @@ public class SoundManager : MonoBehaviour
     public void DeadSound()
     {
         audioSource.clip = dead;
+        audioSource.Play();
+    }
+    public void VictorySound()
+    {
+        audioSource.clip = victory;
         audioSource.Play();
     }
 

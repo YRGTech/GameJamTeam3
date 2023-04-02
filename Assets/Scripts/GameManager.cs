@@ -76,6 +76,8 @@ public class GameManager : MonoBehaviour
 
         if (isOver)
         {
+            FindObjectOfType<SoundManager>().VictorySound();
+
             if (seigneurBlanche.Hp <= 0)
             {
                 imageRose.SetActive(true);

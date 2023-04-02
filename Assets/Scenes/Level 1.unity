@@ -7142,6 +7142,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1201213823}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: StartWaveSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1010720239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8252,6 +8264,10 @@ MonoBehaviour:
   towerOwners: 
   turnPlayer: 0
   playerTurnText: {fileID: 1455688879}
+  imageRose: {fileID: 0}
+  imageBlanche: {fileID: 0}
+  seigneurBlanche: {fileID: 0}
+  seigneurRose: {fileID: 0}
 --- !u!82 &1137779456
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8572,7 +8588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38f71b953e6d3644293dfa4b6497d524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Click: {fileID: 8300000, guid: 0484cf109c3c8264aa456fce0ec83399, type: 3}
+  Click: {fileID: 8300000, guid: 5070818d81dbb8249b0b885393045ebe, type: 3}
+  startWave: {fileID: 8300000, guid: 338b62e2739baf34c80249768f6c04f8, type: 3}
+  dead: {fileID: 8300000, guid: 225162d0a21fbf5489b25a4212b7e468, type: 3}
+  victory: {fileID: 8300000, guid: f168b8f61819ec042b035d0fc37444d2, type: 3}
 --- !u!82 &1201213824
 AudioSource:
   m_ObjectHideFlags: 0
