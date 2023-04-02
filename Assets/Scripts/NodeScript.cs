@@ -48,8 +48,8 @@ public class NodeScript : MonoBehaviour
 
         if (turret != null)
         {
+            //
             Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
-            return;
         }
 
 
