@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8256120473751466049}
   - component: {fileID: 184072838923791841}
   m_Layer: 0
-  m_Name: Tomato
+  m_Name: Projectile Rock
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

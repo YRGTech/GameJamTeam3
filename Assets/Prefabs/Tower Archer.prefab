@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d971caa03bba1aa45b28b2ecb4d72b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8256120473751466052, guid: 9649d8afe0f6c314e8941b2329ae80f0, type: 3}
+  projectilePrefab: {fileID: 8256120473751466052, guid: 544c0eb9a4628854dba6ff8e7858a2e9, type: 3}
   timeBetweenShots: 0.5
   range: 6
   delay: 0.8
