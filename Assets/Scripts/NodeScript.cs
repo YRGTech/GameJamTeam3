@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class NodeScript : MonoBehaviour
 {
-    public Color hoverColor;
-    public Color startColor;
+    [SerializeField] Color hoverColor;
+    [SerializeField] Color startColor;
     private SpriteRenderer rend;
     public GameObject turret;
 
