@@ -76,6 +76,7 @@ public class TowerShoot : MonoBehaviour
             {
                 projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 projectileInstance.GetComponentInParent<Projectile>().playerId = GetComponent<Tower>().ownerId;
+                Debug.Log(projectileInstance.GetComponentInParent<Projectile>().playerId);
                 projectileInstance.GetComponent<Projectile>().OnDestroy += () =>
                 {
                     pooledProjectiles.Remove(projectileInstance);

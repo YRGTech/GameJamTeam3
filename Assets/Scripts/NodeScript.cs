@@ -13,13 +13,22 @@ public class NodeScript : MonoBehaviour
     private GameObject turret;
 
     private CurrencyManager currencyManager;
-
+    private int playerId;
 
     void Start()
     {
         currencyManager = FindObjectOfType<CurrencyManager>();
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
+    }
+    private void Update()
+    {
+        Tower tower = GetComponentInChildren<Tower>();
+        if (tower != null)
+        {
+            playerId = tower.ownerId;
+
+        }
     }
 
     private void OnMouseDown()
@@ -32,10 +41,11 @@ public class NodeScript : MonoBehaviour
 
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        if (currencyManager.CheckCurrency() >= 20)
+        if (currencyManager.CheckCurrency(playerId) >= 20)
         {
             turret = Instantiate(turretToBuild, transform.position + new Vector3(0, 0.5f), transform.rotation);
-            currencyManager.AddCurrency(-20);
+            turret.transform.parent = transform;
+            currencyManager.AddCurrency(-20, playerId);
         }
     }
 
