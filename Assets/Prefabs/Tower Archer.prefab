@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d971caa03bba1aa45b28b2ecb4d72b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8256120473751466052, guid: 544c0eb9a4628854dba6ff8e7858a2e9, type: 3}
+  projectilePrefab: {fileID: 8256120473751466052, guid: 9649d8afe0f6c314e8941b2329ae80f0, type: 3}
   turretLevel1: {fileID: 3175219233618320861}
   turretLevel2: {fileID: 8892062955043815397}
   turretLevel3: {fileID: 7014805134939005708}
@@ -544,8 +544,8 @@ MonoBehaviour:
   nextAnimationLevel1: {fileID: 3175219233618320860}
   nextAnimationLevel2: {fileID: 7326130122687023009}
   nextAnimationLevel3: {fileID: 6978394305086722856}
-  projectilePrefabLevel2: {fileID: 8256120473751466052, guid: aeaca6b40bd41f748b9c340369239472, type: 3}
-  projectilePrefabLevel3: {fileID: 8256120473751466052, guid: f2459d0d13c558345be0121ac79e3d07, type: 3}
+  projectilePrefabLevel2: {fileID: 8256120473751466052, guid: 78843a0226d7a2d4aa65700c9f0d5ab5, type: 3}
+  projectilePrefabLevel3: {fileID: 8256120473751466052, guid: deba054b069a5184ba350e91a03427a8, type: 3}
   spriteLevel2: {fileID: 2065903237, guid: 0474b22db0a267646a636e6bb1cba797, type: 3}
   spriteLevel3: {fileID: -587835984, guid: 0474b22db0a267646a636e6bb1cba797, type: 3}
 --- !u!114 &-5640698217043653719

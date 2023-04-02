@@ -36,6 +36,7 @@ public class NodeScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        FindObjectOfType<SoundManager>().ClickSound();
         if (turret == null)
         {
             Button1.SetActive(!Button1.activeSelf);

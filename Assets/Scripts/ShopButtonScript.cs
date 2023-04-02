@@ -25,6 +25,10 @@ public class ShopButtonScript : MonoBehaviour
 
     [SerializeField] TextMeshPro priceText;
 
+
+
+    public AudioClip builded;
+
     private CurrencyManager currencyManager;
     private int playerId;
 
@@ -37,18 +41,20 @@ public class ShopButtonScript : MonoBehaviour
     }
     private void Update()
     {
-        Tower tower = GetComponentInChildren<Tower>();
-        if (tower != null)
+        NodeScript node = GetComponentInParent<NodeScript>();
+        if (node != null)
         {
-            playerId = tower.ownerId;
+            playerId = node.playerId;
         }
     }
 
     private void OnMouseDown()
     {
-        if (turret != null)
+        FindObjectOfType<SoundManager>().ClickSound();
+
+        if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
         {
-            Debug.Log("Impossible de construire ici, il y a d�ja une tourelle.");
+            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
             return;
         }
 
@@ -59,9 +65,12 @@ public class ShopButtonScript : MonoBehaviour
 
             GameObject newObject = Instantiate(turret1, transform.parent.position + new Vector3(0, 0.5f), transform.rotation);
             nodeScript.turret = newObject;
+            newObject.GetComponent<Tower>().ownerId= playerId;
             newObject.transform.SetParent(GetComponentInParent<NodeScript>().transform);
 
             currencyManager.AddCurrency(-price, playerId);
+
+            FindObjectOfType<SoundManager>().Builded( builded);
 
             GameManager.Destroy(button1);
             GameManager.Destroy(button2);

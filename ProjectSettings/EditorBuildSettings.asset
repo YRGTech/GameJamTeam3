@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Money.unity
-    guid: 42e42e0e9bb1ee14da9b25abdfba2be2
+    path: Assets/Scenes/Level 1.unity
+    guid: 577303c8402e35a48bcba4668699999f
   m_configObjects: {}

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
-public class WallController : MonoBehaviour
+using CodeMonkey.HealthSystemCM;
+public class WallController : MonoBehaviour, IGetHealthSystem
 {
     public GameObject[] zone;
     public int health = 500;
@@ -10,10 +10,19 @@ public class WallController : MonoBehaviour
     public int ownerId;
     private Tilemap map;
     private bool hasChangedSide;
-    private void Start()
+
+    private HealthSystem healthSystem;
+    private void Awake()
     {
         map = GetComponent<Tilemap>();
+        healthSystem = new HealthSystem(health);
         startHealth = health;
+    }
+
+    public void Damage(float damage)
+    {
+        healthSystem.Damage(damage);
+        health = (int)healthSystem.GetHealth();
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -23,8 +32,9 @@ public class WallController : MonoBehaviour
 
             if (enemy != null)
             {
-                health -= enemy.damage;
+                Damage(enemy.damage);
             }
+            FindObjectOfType<SoundManager>().DeadSound();
             enemy.Die();
         }
     }
@@ -67,8 +77,14 @@ public class WallController : MonoBehaviour
     {
         if (hasChangedSide)
         {
-            health = startHealth;
+            healthSystem.HealComplete();
+            health = (int)healthSystem.GetHealth();
             hasChangedSide = false;
         }
+    }
+
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
     }
 }

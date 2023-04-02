@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fonde: {fileID: 3175219233618320861}
-  renderer: {fileID: 8078987786724025072}
+  rend: {fileID: 8078987786724025072}
   towerShoot: {fileID: 8078987786724025074}
   startTime: 0
 --- !u!95 &5343741994930660573
@@ -658,7 +658,7 @@ MonoBehaviour:
   turretLevel3: {fileID: 7624746472374103539}
   price: 60
   timeBetweenShots: 1
-  range: 6
+  range: 7
   delay: 0.8
   startTime: 0
   isShoot: 0
