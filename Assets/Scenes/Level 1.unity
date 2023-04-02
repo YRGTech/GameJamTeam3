@@ -4553,7 +4553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &420496981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5813,7 +5813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &704487320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26529,7 +26529,7 @@ MonoBehaviour:
   notificationObject: {fileID: 420496980}
   notificationObjectSec: {fileID: 704487319}
   message: 
-  letterDelay: 0.03
+  letterDelay: 0.075
 --- !u!4 &1773881422
 Transform:
   m_ObjectHideFlags: 0
