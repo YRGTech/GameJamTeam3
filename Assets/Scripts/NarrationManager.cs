@@ -11,8 +11,9 @@ public class NarrationManager : MonoBehaviour
     private TextMeshProUGUI textMeshProSec;
     [SerializeField] string message;
     private bool isMessage;
-    private float hideDelay = 2.5f;
+    private float hideDelay = 1.5f;
     private bool isWriting;
+    [SerializeField] float letterDelay = 0.01f;
 
     private void Awake()
     {
@@ -50,10 +51,20 @@ public class NarrationManager : MonoBehaviour
     private IEnumerator ShowNotification(string message)
     {
         notificationObject.SetActive(true);
-        textMeshPro.text = message;
+        textMeshPro.text = "";
         isMessage = true;
 
+        for (int i = 0; i < message.Length; i++)
+        {
+            isWriting = true;
+            textMeshPro.text += message[i];
+            yield return new WaitForSeconds(letterDelay);
+        }
+
+        isWriting = false;
+
         yield return new WaitForSeconds(hideDelay);
+
 
         HideNotification();
     }
@@ -61,10 +72,20 @@ public class NarrationManager : MonoBehaviour
     private IEnumerator ShowNotificationSec(string message)
     {
         notificationObjectSec.SetActive(true);
-        textMeshProSec.text = message;
+        textMeshProSec.text = "";
         isMessage = true;
 
+        for (int i = 0; i < message.Length; i++)
+        {
+            isWriting = true;
+            textMeshProSec.text += message[i];
+            yield return new WaitForSeconds(letterDelay);
+        }
+
+        isWriting = false;
+
         yield return new WaitForSeconds(hideDelay);
+
 
         HideNotificationSec();
     }
