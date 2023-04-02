@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,25 +7,32 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class NodeScript : MonoBehaviour
 {
-*//*    public Color hoverColor;
-    public Color startColor;*/
-/*    private SpriteRenderer rend;*/
-/*    private GameObject turret;*/
-/*
-    private CurrencyManager currencyManager;*/
+    public Color hoverColor;
+    public Color startColor;
+    private SpriteRenderer rend;
+    private GameObject turret;
 
+    private CurrencyManager currencyManager;
+    private int playerId;
 
-    /*void Start()
+    void Start()
     {
         currencyManager = FindObjectOfType<CurrencyManager>();
         rend = GetComponent<SpriteRenderer>();
-        rend.color = startColor;
-    }*/
-
-    /*private void OnMouseDown()
+        startColor = rend.material.color;
+    }
+    private void Update()
     {
+        Tower tower = GetComponentInChildren<Tower>();
+        if (tower != null)
+        {
+            playerId = tower.ownerId;
 
+        }
+    }
 
+    private void OnMouseDown()
+    {
         if (turret != null)
         {
             Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
@@ -34,24 +41,25 @@ public class NodeScript : MonoBehaviour
 
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        if (currencyManager.CheckCurrency() >= 20)
+        if (currencyManager.CheckCurrency(playerId) >= 20)
         {
             turret = Instantiate(turretToBuild, transform.position + new Vector3(0, 0.5f), transform.rotation);
-            currencyManager.AddCurrency(-20);
+            turret.transform.parent = transform;
+            currencyManager.AddCurrency(-20, playerId);
         }
-    }*/
+    }
 
-/*    private void OnMouseEnter()
+    private void OnMouseEnter()
     {
-        rend.color = hoverColor;
+        rend.material.color = Color.red;
     }
 
 
     private void OnMouseExit()
     {
-        rend.color = startColor;
+        rend.material.color = startColor;
     }
-}*/
+}
 
 
 

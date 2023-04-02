@@ -25,6 +25,7 @@ public class CurrencyManager : MonoBehaviour
 
     public void AddCurrency(int amount, int player)
     {
+        player++;
         if (player == 1)
         {
             player1Currency += amount;
@@ -35,9 +36,18 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
-    public int CheckCurrency()
+    public int CheckCurrency(int player)
     {
-        return currentCurrency;
+        player++;
+        if (player == 1)
+        {
+            return player1Currency;
+        }
+        else if (player == 2)
+        {
+            return player2Currency;
+        }
+        else return 0;
     }
 
     private void Update()

@@ -30,7 +30,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<Enemy>().TakeDamage(damage,playerId+1);
+            other.GetComponent<Enemy>().TakeDamage(damage,playerId);
             Apubal();
         }
     }
