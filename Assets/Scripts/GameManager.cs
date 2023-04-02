@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,10 +10,51 @@ public class GameManager : MonoBehaviour
     public List<Tower> towers = new List<Tower>(); // an array of all the towers in the game
 
     public int[] towerOwners; // an array that maps each tower index to its owner ID
-    private Tilemap zone; // the tilemap that defines the zone where the towers are
+
+    public int turnPlayer;
+    public TextMeshProUGUI playerTurnText;
+
+    public static bool isOver;
     private void Start()
     {
-       
+       turnPlayer= 0;
+    }
+
+    public void Turn(int turn)
+    {
+        foreach (var tower in towers)
+        {
+            if (tower.ownerId == turn)
+            {
+                tower.GetComponent<TowerShoot>().enabled = true;
+            }
+            else
+            {
+                tower.GetComponent<TowerShoot>().enabled = false;
+
+            }
+        }
+        foreach (var wall in walls)
+        {
+            int wallId = wall.GetComponent<WallController>().ownerId;
+            if (wallId == turn)
+            {
+                wall.GetComponent<TilemapCollider2D>().enabled = true;
+            }
+            else
+            {
+                wall.GetComponent<TilemapCollider2D>().enabled = false;
+            }
+        }
+    }
+    public void NextTurn()
+    {
+        turnPlayer = (turnPlayer + 1) % numPlayers;
+        foreach (var wall in walls)
+        {
+            wall.GetComponent<WallController>().resetHp();
+        }
+
     }
 
     private void Update()
@@ -22,13 +64,9 @@ public class GameManager : MonoBehaviour
         {
             towerOwners[i] = towers[i].ownerId;
         }
+        Turn(turnPlayer);
+        playerTurnText.text = "Player " + (turnPlayer+1) + " turn's";
+
     }
 
-    private int ChangeTowerNewOwner( int currentOwner)
-    {
-        // TODO: Implement your own logic to determine the new owner of the tower
-        // based on the location of the destroyed wall and the current owner.
-        // For example, you could assign the tower to the player who destroyed the wall.
-        return (currentOwner + 1) % numPlayers; // just an example
-    }
 }

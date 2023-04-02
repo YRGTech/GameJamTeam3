@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class NodeScript : MonoBehaviour
 {
-    public Color hoverColor;
-    public Color startColor;
+    [SerializeField] Color hoverColor;
+    [SerializeField] Color startColor;
     private SpriteRenderer rend;
     public GameObject turret;
 
@@ -20,7 +15,7 @@ public class NodeScript : MonoBehaviour
     public int level;
 
     private CurrencyManager currencyManager;
-    private int playerId;
+    public int playerId;
 
     void Start()
     {
@@ -28,6 +23,7 @@ public class NodeScript : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
     }
+
     private void Update()
     {
         Tower tower = GetComponentInChildren<Tower>();
@@ -47,28 +43,17 @@ public class NodeScript : MonoBehaviour
             Button3.SetActive(!Button3.activeSelf);
         }
 
-        
-
-        if (turret != null)
+        if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
         {
             ButtonUpgrade.SetActive(!ButtonUpgrade.activeSelf);
 
             //Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
         }
-
-
-            //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-            //if (currencyManager.CheckCurrency(playerId) >= 20)
-            //{
-            //    turret = Instantiate(turretToBuild, transform.position + new Vector3(0, 0.5f), transform.rotation);
-            //    turret.transform.parent = transform;
-            //    currencyManager.AddCurrency(-20, playerId);
-            //}
     }
 
     private void OnMouseEnter()
     {
-        rend.material.color = Color.red;
+        rend.material.color = new Color(1f, 1f, 1f, 0.7f);
     }
 
 
