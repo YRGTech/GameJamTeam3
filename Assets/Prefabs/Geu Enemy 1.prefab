@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1472891575770136737}
   - component: {fileID: 1472891575770136736}
   - component: {fileID: 1472891575770136739}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Geu Ultime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 3023739850000187002}
   - component: {fileID: 6222639719176265306}
   - component: {fileID: -7667226782245796918}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Geu Enemy 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -257,4 +257,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

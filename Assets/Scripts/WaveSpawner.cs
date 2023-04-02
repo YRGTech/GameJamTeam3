@@ -63,7 +63,7 @@ public class WaveSpawner : MonoBehaviour
     int waveIndex = 0;
 
     private int numEnemies;
-
+    private bool isLanched;
     private void Start()
     {
         numEnemies = 0;
@@ -71,13 +71,24 @@ public class WaveSpawner : MonoBehaviour
 
     public void LaunchWave()
     {
-        if (waveIndex < waves.Length)
+        if (numEnemies <= 0)
         {
-            wave = waves[waveIndex];
+            isLanched= true;
+            wave = waves[Random.Range(0, waves.Length)];
             StartCoroutine(SpawnEnemies());
-            waveIndex++;
+            waveIndex += GetComponent<GameManager>().turnPlayer;
         }
 
+
+    }
+
+    private void Update()
+    {
+        if (numEnemies <= 0 && isLanched)
+        {
+            GetComponent<GameManager>().NextTurn();
+            isLanched= false;
+        }
     }
 
     private IEnumerator SpawnEnemies()
@@ -93,7 +104,7 @@ public class WaveSpawner : MonoBehaviour
     private void SpawnEnemy()
     {
         // Choose a random spawn point
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform spawnPoint = spawnPoints[GetComponent<GameManager>().turnPlayer];
 
         // Get the Path component for the spawn point
         SpawnPoint spawn = spawnPoint.GetComponent<SpawnPoint>();

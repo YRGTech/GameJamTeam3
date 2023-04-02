@@ -48,7 +48,7 @@ public class ShopButtonScript : MonoBehaviour
     {
         if (turret != null)
         {
-            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
+            Debug.Log("Impossible de construire ici, il y a dï¿½ja une tourelle.");
             return;
         }
 
