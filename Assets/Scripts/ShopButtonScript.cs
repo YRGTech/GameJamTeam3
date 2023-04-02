@@ -29,7 +29,7 @@ public class ShopButtonScript : MonoBehaviour
     private int playerId;
 
     void Start()
-    {   
+    {
         priceText.text = price.ToString();
         currencyManager = FindObjectOfType<CurrencyManager>();
         rend = GetComponent<SpriteRenderer>();

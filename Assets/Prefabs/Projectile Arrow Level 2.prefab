@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 184072838923791841}
   - component: {fileID: 1679661496817797021}
   m_Layer: 0
-  m_Name: Projectile Rock
+  m_Name: Projectile Arrow Level 2
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8256120473751466052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.066666685, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1463988837
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1924183797, guid: 47a8f8ca1a69db04e877d6c531b4c20f, type: 3}
+  m_Sprite: {fileID: 1188335176, guid: 63194e79cf9664b4893526235d7c83e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  damage: 50
+  damage: 20
   followSpeed: 10
   playerId: 0
 --- !u!58 &184072838923791841
@@ -129,7 +129,7 @@ Animator:
   m_GameObject: {fileID: 8256120473751466052}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3a372e0527968244b97f58a2f27c0ea4, type: 2}
+  m_Controller: {fileID: 9100000, guid: ebffbd6f15d92574a9d45e8f097400d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

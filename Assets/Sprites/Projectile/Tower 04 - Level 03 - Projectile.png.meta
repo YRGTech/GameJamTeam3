@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4ff1b1a21999edc45bddb209fc3c96c4
+guid: 4999ef57e12fe024d8a0364e892af44f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tower 06 - Level 01 - Weapon_0
+      name: Tower 04 - Level 03 - Projectile_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99b063a620c4c174c923ea9c268c1a93
-      internalID: -1107851975
+      spriteID: 60b0105a15db8ac4bbb6ce185370168a
+      internalID: 109654461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower 06 - Level 01 - Weapon_1
+      name: Tower 04 - Level 03 - Projectile_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 10
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e17183c0a339964e9447a8d2d75a369
-      internalID: -2039812135
+      spriteID: 04edfe0076eba5040b58e7e55fe607a9
+      internalID: -1642112454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower 06 - Level 01 - Weapon_2
+      name: Tower 04 - Level 03 - Projectile_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 20
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca0edb6b12b9e764f8cbabd1f27305a1
-      internalID: 1687629393
+      spriteID: 8f7670a9179736c4795735d1de7974ca
+      internalID: -1124598473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower 06 - Level 01 - Weapon_3
+      name: Tower 04 - Level 03 - Projectile_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 30
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dec1e394139ed1540941b74495e20de8
-      internalID: 1885922161
+      spriteID: 3ac5b3aed14fb6e438b0cce2b198b0bb
+      internalID: -1270654778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower 06 - Level 01 - Weapon_4
+      name: Tower 04 - Level 03 - Projectile_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 40
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54e99e14daf03a840b6d6ca407c986ab
-      internalID: -1078190868
+      spriteID: b049732e0bc17fe4e8cecebcd62f31f2
+      internalID: 227512436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tower 06 - Level 01 - Weapon_5
+      name: Tower 04 - Level 03 - Projectile_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 50
         y: 0
-        width: 64
-        height: 64
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +248,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90c9f37dd34d4b5479f80a08c17a8018
-      internalID: -1494974673
+      spriteID: f9266f3efcaa8364aafbd007a0cf9d1a
+      internalID: 406872132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tower 04 - Level 03 - Projectile_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cee206d09cbb8459a94581b5041bbe
+      internalID: -1357234440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tower 04 - Level 03 - Projectile_7
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ee18a0aa0e72243b8d607f3d895ecc
+      internalID: 140710085
       vertices: []
       indices: 
       edges: []
@@ -265,12 +307,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tower 06 - Level 01 - Weapon_0: -1107851975
-      Tower 06 - Level 01 - Weapon_1: -2039812135
-      Tower 06 - Level 01 - Weapon_2: 1687629393
-      Tower 06 - Level 01 - Weapon_3: 1885922161
-      Tower 06 - Level 01 - Weapon_4: -1078190868
-      Tower 06 - Level 01 - Weapon_5: -1494974673
+      Tower 04 - Level 03 - Projectile_0: 109654461
+      Tower 04 - Level 03 - Projectile_1: -1642112454
+      Tower 04 - Level 03 - Projectile_2: -1124598473
+      Tower 04 - Level 03 - Projectile_3: -1270654778
+      Tower 04 - Level 03 - Projectile_4: 227512436
+      Tower 04 - Level 03 - Projectile_5: 406872132
+      Tower 04 - Level 03 - Projectile_6: -1357234440
+      Tower 04 - Level 03 - Projectile_7: 140710085
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

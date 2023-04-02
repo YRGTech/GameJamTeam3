@@ -4,6 +4,10 @@ using UnityEngine;
 public class TowerShoot : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject turretLevel1;
+    public GameObject turretLevel2;
+    public GameObject turretLevel3;
+    public int price;
     [SerializeField] float timeBetweenShots;
     [SerializeField] float range;
     private float lastShotTime;
@@ -13,7 +17,16 @@ public class TowerShoot : MonoBehaviour
     [SerializeField] float delay;
     [SerializeField] float startTime;
     [SerializeField] bool isShoot = false;
-    public NextAnimation nextAnimation = new NextAnimation();
+    public NextAnimation nextAnimationLevel1;
+    public NextAnimation nextAnimationLevel2;
+    public NextAnimation nextAnimationLevel3;
+
+    public GameObject projectilePrefabLevel2;
+    public GameObject projectilePrefabLevel3;
+
+
+    public Sprite spriteLevel2;
+    public Sprite spriteLevel3;
 
     void Start()
     {
@@ -28,7 +41,21 @@ public class TowerShoot : MonoBehaviour
             {
                 if (Time.time - lastShotTime > timeBetweenShots && !isShoot)
                 {
-                    nextAnimation.PlayAnim();
+                    if (turretLevel1.activeSelf)
+                    {
+
+                        nextAnimationLevel1.PlayAnim();
+                    }
+                    else if (turretLevel2.activeSelf)
+                    {
+
+                        nextAnimationLevel2.PlayAnim();
+                    }
+                    else if(turretLevel3.activeSelf)
+                    {
+
+                        nextAnimationLevel3.PlayAnim();
+                    }
                     isShoot = true;
                     startTime = Time.time;
 

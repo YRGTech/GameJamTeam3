@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  damage: 50
+  damage: 10
   followSpeed: 10
   playerId: 0
 --- !u!58 &184072838923791841
@@ -129,7 +129,7 @@ Animator:
   m_GameObject: {fileID: 8256120473751466052}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 081a95b5776270c4687b733d60c6ee89, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3a372e0527968244b97f58a2f27c0ea4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
