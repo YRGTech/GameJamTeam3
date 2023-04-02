@@ -8,6 +8,7 @@ public class NextAnimation : MonoBehaviour
     public Animator animator;
     private float timeActuelle;
     private bool isIdle = true;
+    [SerializeField] float timeDelay;
 
     void Start()
     {
@@ -20,14 +21,14 @@ public class NextAnimation : MonoBehaviour
         if (!isIdle && timeActuelle <= Time.time - 1.15f)
         {
             isIdle = true;
-            animator.Play("Fonde 1 Idle");
+            animator.SetBool("isShooting", false);
         }
     }
 
 
     public void PlayAnim()
     {
-        animator.Play("Fonde 1");
+        animator.SetBool("isShooting", true);
         timeActuelle = Time.time;
         isIdle = false;
     }
