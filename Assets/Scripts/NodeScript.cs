@@ -10,6 +10,9 @@ public class NodeScript : MonoBehaviour
     public GameObject Button1;
     public GameObject Button2;
     public GameObject Button3;
+    public GameObject ButtonUpgrade;
+
+    public int level;
 
     private CurrencyManager currencyManager;
     public int playerId;
@@ -20,6 +23,7 @@ public class NodeScript : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
     }
+
     private void Update()
     {
         Tower tower = GetComponentInChildren<Tower>();
@@ -39,28 +43,17 @@ public class NodeScript : MonoBehaviour
             Button3.SetActive(!Button3.activeSelf);
         }
 
-        
-
-                if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
-
+        if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
         {
-            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
-            return;
+            ButtonUpgrade.SetActive(!ButtonUpgrade.activeSelf);
+
+            //Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
         }
-
-
-            //GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-            //if (currencyManager.CheckCurrency(playerId) >= 20)
-            //{
-            //    turret = Instantiate(turretToBuild, transform.position + new Vector3(0, 0.5f), transform.rotation);
-            //    turret.transform.parent = transform;
-            //    currencyManager.AddCurrency(-20, playerId);
-            //}
     }
 
     private void OnMouseEnter()
     {
-        rend.material.color = Color.red;
+        rend.material.color = new Color(1f, 1f, 1f, 0.7f);
     }
 
 

@@ -102,13 +102,13 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage, int fromPlayer)
     {
         health -= Mathf.RoundToInt( damage);
-
         if (health <= 0)
         {
             currencyManager.AddCurrency(currencyReward, fromPlayer);
             Die();
         }
     }
+
     private void GetNextWaypoint()
     {
         if (waypointIndex >= path.GetWaypointCount())
@@ -130,7 +130,7 @@ public class Enemy : MonoBehaviour
 
         Destroy(gameObject);
 
-        Debug.Log(currencyReward);
+        //Debug.Log(currencyReward);
     }
 
 

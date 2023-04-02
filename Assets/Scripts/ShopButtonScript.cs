@@ -29,7 +29,7 @@ public class ShopButtonScript : MonoBehaviour
     private int playerId;
 
     void Start()
-    {   
+    {
         priceText.text = price.ToString();
         currencyManager = FindObjectOfType<CurrencyManager>();
         rend = GetComponent<SpriteRenderer>();
@@ -48,7 +48,7 @@ public class ShopButtonScript : MonoBehaviour
     {
         if (turret != null)
         {
-            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
+            Debug.Log("Impossible de construire ici, il y a dï¿½ja une tourelle.");
             return;
         }
 
@@ -56,15 +56,16 @@ public class ShopButtonScript : MonoBehaviour
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         if (currencyManager.CheckCurrency(playerId) >= price)
         {
-            GameManager.Destroy(button1);
-            GameManager.Destroy(button2);
-            GameManager.Destroy(button3);
 
             GameObject newObject = Instantiate(turret1, transform.parent.position + new Vector3(0, 0.5f), transform.rotation);
             nodeScript.turret = newObject;
             newObject.transform.SetParent(GetComponentInParent<NodeScript>().transform);
 
             currencyManager.AddCurrency(-price, playerId);
+
+            GameManager.Destroy(button1);
+            GameManager.Destroy(button2);
+            GameManager.Destroy(button3);
         }
     }
 
