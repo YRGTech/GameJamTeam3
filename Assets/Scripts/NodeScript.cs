@@ -7,10 +7,12 @@ public class NodeScript : MonoBehaviour
     private SpriteRenderer rend;
     public GameObject turret;
 
-
     public GameObject Button1;
     public GameObject Button2;
     public GameObject Button3;
+    public GameObject ButtonUpgrade;
+
+    public int level;
 
     private CurrencyManager currencyManager;
     public int playerId;
@@ -43,7 +45,9 @@ public class NodeScript : MonoBehaviour
 
         if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
         {
-            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
+            ButtonUpgrade.SetActive(!ButtonUpgrade.activeSelf);
+
+            //Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
         }
     }
 
