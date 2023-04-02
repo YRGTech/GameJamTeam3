@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
 
 
 
-        if (Vector3.Distance(transform.position, target) <= 0.2)
+        if (Vector3.Distance(transform.position, target) <= 0.3)
         {
             GetNextWaypoint();
         }
