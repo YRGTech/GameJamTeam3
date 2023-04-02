@@ -1,6 +1,9 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using static UnityEngine.EventSystems.EventTrigger;
+using UnityEditor.U2D.Path.GUIFramework;
+using UnityEngine.UIElements;
 
 
 public class NarrationManager : MonoBehaviour
@@ -13,7 +16,7 @@ public class NarrationManager : MonoBehaviour
     private bool isMessage;
     private float hideDelay = 1.5f;
     private bool isWriting;
-    [SerializeField] float letterDelay = 0.01f;
+    [SerializeField] float letterDelay;
 
     private void Awake()
     {
@@ -30,23 +33,27 @@ public class NarrationManager : MonoBehaviour
 
     private IEnumerator ShowNotifications()
     {
-        yield return ShowNotification("Salutations, noble vassal!");
-        yield return ShowNotification("Vous avez prêté allégeance au roi le plus malin et le plus stratégique de tout le royaume");
-        yield return ShowNotification("Nous sommes en guerre contre notre rival pour le trône");
-        yield return ShowNotification("Et nous avons besoin de vous pour protéger notre territoire contre les attaques ennemies!");
-        yield return ShowNotification("Construisez des tours de défense!");
-        yield return ShowNotification("Organisez vos troupes!");
-        yield return ShowNotification("Et soyez prêt à tout moment!");
-        yield return ShowNotification("Si vous survivez à toutes les vagues ennemies!");
-        yield return ShowNotification("Vous serez généreusement récompensé pour votre loyauté!");
-        yield return ShowNotificationSec("Bonjour, vassal!");
-        yield return ShowNotificationSec("Vous avez choisi de servir sous les ordres du roi le plus puissant et le plus cruel de tout le pays!");
-        yield return ShowNotificationSec("Nous sommes en guerre contre notre ennemi juré pour le contrôle du trône!");
-        yield return ShowNotificationSec("Et nous avons besoin de votre force pour défendre notre territoire contre les attaques ennemies!");
-        yield return ShowNotificationSec("Construisez des tours de défense!");
-        yield return ShowNotificationSec("Rassemblez vos troupes et préparez-vous pour la bataille!");
-        yield return ShowNotificationSec("Si vous survivez à toutes les vagues ennemies!");
-        yield return ShowNotificationSec("Vous serez récompensé pour votre loyauté envers notre roi et notre pays!");
+        yield return ShowNotification("Salutations, noble Vassal !");
+        yield return ShowNotification("Vous avez prêté allégeance au Suzerain d'York.");
+        yield return ShowNotification("le plus malin et le plus stratégique de tout le royaume.");
+        yield return ShowNotification("Nous sommes en guerre contre notre rival, la Maison de Lancastre, pour le trône d'Angleterre.");
+        yield return ShowNotification("Et nous avons besoin de vous pour protéger notre territoire de la province du Nord contre les attaques ennemies !");
+        yield return ShowNotification("Construisez des tours de défense !");
+        yield return ShowNotification("Organisez vos troupes !");
+        yield return ShowNotification("Et soyez prêt à tout moment !");
+        yield return ShowNotification("Si vous survivez à toutes les vagues ennemies.");
+        yield return ShowNotification("Vous serez généreusement récompensé pour votre loyauté envers la Maison d'York.");
+        yield return ShowNotificationSec("Bonjour, Vassal !");
+        yield return ShowNotificationSec("Vous avez choisi de servir sous les ordres du roi le plus puissant et le plus cruel de tout le pays.");
+        yield return ShowNotificationSec("Le roi Henry VI de la Maison de Lancastre.");
+        yield return ShowNotificationSec("Nous sommes en guerre contre notre ennemi juré, la Maison d'York.");
+        yield return ShowNotificationSec("Pour le contrôle du trône d'Angleterre.");
+        yield return ShowNotificationSec("Et nous avons besoin de votre force pour défendre notre territoire de la province du Sud contre les attaques ennemies.");
+        yield return ShowNotificationSec("Construisez des tours de défense !");
+        yield return ShowNotificationSec("Rassemblez vos troupes et préparez-vous pour la bataille !");
+        yield return ShowNotificationSec("Si vous survivez à toutes les vagues ennemies.");
+        yield return ShowNotificationSec("Vous serez récompensé pour votre loyauté envers le roi Henry VI et la Maison de Lancastre !");
+
     }
     private IEnumerator ShowNotification(string message)
     {
