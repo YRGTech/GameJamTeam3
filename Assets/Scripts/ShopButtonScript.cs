@@ -59,7 +59,7 @@ public class ShopButtonScript : MonoBehaviour
 
             GameObject newObject = Instantiate(turret1, transform.parent.position + new Vector3(0, 0.5f), transform.rotation);
             nodeScript.turret = newObject;
-            //newObject.transform.SetParent(transform.root);
+            newObject.transform.SetParent(GetComponentInParent<NodeScript>().transform);
 
             currencyManager.AddCurrency(-price, playerId);
 

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8256120473751466051}
   - component: {fileID: 8256120473751466049}
   - component: {fileID: 184072838923791841}
-  - component: {fileID: 1679661496817797021}
+  - component: {fileID: 6732688638201690502}
   m_Layer: 0
-  m_Name: Projectile Rock
+  m_Name: Projectile bigRock
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1463988837
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1924183797, guid: 47a8f8ca1a69db04e877d6c531b4c20f, type: 3}
+  m_Sprite: {fileID: -402554986, guid: a250cb4d9f7a5c94385554699248ae04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -119,7 +119,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!95 &1679661496817797021
+--- !u!95 &6732688638201690502
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ Animator:
   m_GameObject: {fileID: 8256120473751466052}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3a372e0527968244b97f58a2f27c0ea4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 081a95b5776270c4687b733d60c6ee89, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
