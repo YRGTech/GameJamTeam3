@@ -652,21 +652,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d971caa03bba1aa45b28b2ecb4d72b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8256120473751466052, guid: 9649d8afe0f6c314e8941b2329ae80f0, type: 3}
+  projectilePrefab: {fileID: 8256120473751466052, guid: 544c0eb9a4628854dba6ff8e7858a2e9, type: 3}
   turretLevel1: {fileID: 3175219233618320861}
   turretLevel2: {fileID: 6985345048848504745}
   turretLevel3: {fileID: 1015137887744912148}
   price: 100
-  timeBetweenShots: 2
-  range: 6
+  timeBetweenShots: 1.5
+  range: 10
   delay: 0.8
   startTime: 0
   isShoot: 0
   nextAnimationLevel1: {fileID: 3175219233618320860}
   nextAnimationLevel2: {fileID: 9014144676046345960}
   nextAnimationLevel3: {fileID: 6036021360102644321}
-  projectilePrefabLevel2: {fileID: 8256120473751466052, guid: deba054b069a5184ba350e91a03427a8, type: 3}
-  projectilePrefabLevel3: {fileID: 8256120473751466052, guid: 78843a0226d7a2d4aa65700c9f0d5ab5, type: 3}
+  projectilePrefabLevel2: {fileID: 8256120473751466052, guid: f2459d0d13c558345be0121ac79e3d07, type: 3}
+  projectilePrefabLevel3: {fileID: 8256120473751466052, guid: d2a05958ecebc5240bd2d91cb52c3060, type: 3}
   spriteLevel2: {fileID: -1934683147, guid: 81783205df134ad49aa22a9ab42f922e, type: 3}
   spriteLevel3: {fileID: 812558828, guid: 81783205df134ad49aa22a9ab42f922e, type: 3}
 --- !u!114 &-5640698217043653719

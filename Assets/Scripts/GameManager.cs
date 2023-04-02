@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,9 +16,15 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerTurnText;
 
     public static bool isOver;
+
+    [SerializeField] GameObject imageRose;
+    [SerializeField] GameObject imageBlanche;
+
+    [SerializeField] Seigneur seigneurBlanche;
+    [SerializeField] Seigneur seigneurRose;
     private void Start()
     {
-       turnPlayer= 0;
+        turnPlayer = 0;
     }
 
     public void Turn(int turn)
@@ -65,7 +72,19 @@ public class GameManager : MonoBehaviour
             towerOwners[i] = towers[i].ownerId;
         }
         Turn(turnPlayer);
-        playerTurnText.text = "Player " + (turnPlayer+1) + " turn's";
+        playerTurnText.text = "Player " + (turnPlayer + 1) + " turn's";
+
+        if (isOver)
+        {
+            if (seigneurBlanche.Hp <= 0)
+            {
+                imageRose.SetActive(true);
+            }
+            else if (seigneurRose.Hp <= 0)
+            {
+                imageBlanche.SetActive(true);
+            }
+        }
 
     }
 

@@ -25,6 +25,10 @@ public class ShopButtonScript : MonoBehaviour
 
     [SerializeField] TextMeshPro priceText;
 
+
+
+    public AudioClip builded;
+
     private CurrencyManager currencyManager;
     private int playerId;
 
@@ -46,9 +50,11 @@ public class ShopButtonScript : MonoBehaviour
 
     private void OnMouseDown()
     {
+        FindObjectOfType<SoundManager>().ClickSound();
+
         if (turret != null || playerId != FindObjectOfType<GameManager>().turnPlayer)
         {
-            Debug.Log("Impossible de construire ici, il y a d�ja une tourelle.");
+            Debug.Log("Impossible de construire ici, il y a déja une tourelle.");
             return;
         }
 
@@ -63,6 +69,8 @@ public class ShopButtonScript : MonoBehaviour
             newObject.transform.SetParent(GetComponentInParent<NodeScript>().transform);
 
             currencyManager.AddCurrency(-price, playerId);
+
+            FindObjectOfType<SoundManager>().Builded( builded);
 
             GameManager.Destroy(button1);
             GameManager.Destroy(button2);

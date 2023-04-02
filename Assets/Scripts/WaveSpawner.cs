@@ -60,7 +60,7 @@ public class WaveSpawner : MonoBehaviour
     public int maxEnemies = 10; // The maximum number of enemies that can be alive at once
     [SerializeField]
     float currencyRewardMultiplier = 1.2f;
-    int waveIndex = 10;
+    int waveIndex = 0;
 
     private int numEnemies;
     private bool isLanched;

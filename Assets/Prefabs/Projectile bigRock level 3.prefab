@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  damage: 30
+  damage: 60
   followSpeed: 10
   playerId: 0
 --- !u!58 &184072838923791841

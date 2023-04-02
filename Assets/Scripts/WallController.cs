@@ -34,6 +34,7 @@ public class WallController : MonoBehaviour, IGetHealthSystem
             {
                 Damage(enemy.damage);
             }
+            FindObjectOfType<SoundManager>().DeadSound();
             enemy.Die();
         }
     }

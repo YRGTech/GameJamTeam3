@@ -27,6 +27,11 @@ public class UpgradeButtonScript : MonoBehaviour
 
     [SerializeField] TextMeshPro priceText;
 
+
+    public AudioClip builded;
+    public AudioClip upgrade;
+
+
     private Sprite spriteLevel2;
     private Sprite spriteLevel3;
 
@@ -64,6 +69,7 @@ public class UpgradeButtonScript : MonoBehaviour
     private void OnMouseDown()
     {
 
+        FindObjectOfType<SoundManager>().ClickSound();
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         if (currencyManager.CheckCurrency(playerId) >= price*2)
